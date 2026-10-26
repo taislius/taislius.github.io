@@ -1,0 +1,10 @@
+lt:
+  name: Lietuvių
+  home: /
+  posts: Įrašai
+  date_format: "%Y-%m-%d"
+en:
+  name: English
+  home: /en/
+  posts: Posts
+  date_format: "%b %-d, %Y"

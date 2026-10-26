@@ -1,0 +1,26 @@
+title: Taislius
+description: A blog by Kestutis
+author: Kestutis
+theme: minima
+lang: lt
+languages: [lt, en]
+baseurl: ""
+url: "https://taislius.github.io"
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Posts in _posts/lt are Lithuanian (served at /), posts in _posts/en are English (served at /en/)
+defaults:
+  - scope: { path: "_posts/lt", type: posts }
+    values: { lang: lt, layout: post, permalink: "/:year/:month/:day/:title/" }
+  - scope: { path: "_posts/en", type: posts }
+    values: { lang: en, layout: post, permalink: "/en/:year/:month/:day/:title/" }
+  - scope: { path: "en" }
+    values: { lang: en }
