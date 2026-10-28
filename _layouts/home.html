@@ -6,25 +6,24 @@ layout: default
 {%- assign posts = site.posts | where: "lang", lang -%}
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  <header class="hero">
+    <h1 class="hero-title">{{ page.title | default: site.title | escape }}</h1>
+    <p class="hero-deck">{{ t.tagline }}</p>
+  </header>
 
   {{ content }}
 
   {%- if posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ t.posts }}</h2>
+    <h2 class="eyebrow">{{ t.posts }}</h2>
     <ul class="post-list">
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: t.date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: t.date_format }}</time>
+          <span class="post-link-title">{{ post.title | escape }}</span>
+        </a>
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          <div class="post-excerpt">{{ post.excerpt }}</div>
         {%- endif -%}
       </li>
       {%- endfor -%}

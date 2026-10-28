@@ -2,9 +2,13 @@ lt:
   name: Lietuvių
   home: /
   posts: Įrašai
+  tagline: Trumpi užrašai apie tai, ką kuriu ir taisau, dažniausiai su Rust.
+  min_read: min. skaitymo
   date_format: "%Y-%m-%d"
 en:
   name: English
   home: /en/
   posts: Posts
+  tagline: Short notes on things I build and fix, mostly in Rust.
+  min_read: min read
   date_format: "%b %-d, %Y"
